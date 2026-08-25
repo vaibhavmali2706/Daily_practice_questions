@@ -11,7 +11,7 @@ class Solution:
             p*=d
             ab//=10
         print(s+p)
-        return (s+p)==n
+        return n%(s+p)==0
 s=Solution()
 
 print(s.check(n))

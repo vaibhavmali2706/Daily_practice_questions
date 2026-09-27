@@ -1,0 +1,17 @@
+class Solution:
+    def reverseParentheses(self, s: str) -> str:
+        stack = []
+        for char in s:
+            if char == ')':
+                temp = ''
+                while stack and stack[-1] != '(':
+                    temp = stack.pop() + temp
+                stack.pop()  
+                stack.append(temp[::-1]) 
+            else:
+                stack.append(char)
+        return ''.join(stack)
+    
+p=Solution()
+s = "(u(love)i)"
+print(p.reverseParentheses(s))
